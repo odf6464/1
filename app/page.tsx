@@ -58,13 +58,13 @@ const InfoRow = memo(({ label, value, onCopy, isCopied, isLast = false }: {
       isCopied ? 'bg-[#007AFF]/10' : 'active:bg-black/5'
     }`}
   >
-    <span className="text-[15px] font-medium text-[#8E8E93] w-20 shrink-0 tracking-tight drop-shadow-[0_1px_2px_rgba(0,0,0,0.9)]">
+    <span className="text-[15px] font-medium text-[#8E8E93] w-20 shrink-0 tracking-tight">
       {label}
     </span>
 
     <div className="flex items-center gap-3 min-w-0 flex-1 justify-end h-6 relative overflow-hidden">
       <span
-        className={`absolute right-0 text-[16px] font-bold truncate select-all tracking-tight drop-shadow-[0_1px_2px_rgba(0,0,0,0.9)] transition-all duration-300 ${
+        className={`absolute right-0 text-[16px] font-bold truncate select-all tracking-tight transition-all duration-300 ${
           isCopied ? 'opacity-0 translate-y-4 scale-95' : 'opacity-100 translate-y-0 scale-100 text-[#1C1C1E]'
         }`}
       >
@@ -131,7 +131,7 @@ const BottomSheet = memo(({
         <div className="p-4 border-b border-transparent sticky top-0 z-10 shrink-0 bg-white/10">
           <div className="w-9 h-1 bg-black/10 rounded-full mx-auto mb-4" />
           <div className="relative flex items-center justify-center min-h-[22px]">
-            <h3 className="text-[17px] font-semibold text-[#1C1C1E] tracking-tight drop-shadow-md">
+            <h3 className="text-[17px] font-semibold text-[#1C1C1E] tracking-tight">
               {title}
             </h3>
             {rightAction ? (
@@ -376,7 +376,7 @@ export default function HomePage() {
       <div className="max-w-2xl mx-auto relative z-10">
         <header className="sticky top-0 z-40 bg-white/5 border-b border-transparent">
           <div className="flex items-center justify-between h-14 px-4">
-            <h1 className="text-[17px] font-semibold text-[#1C1C1E] tracking-tight drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+            <h1 className="text-[17px] font-semibold text-[#1C1C1E] tracking-tight">
               脸书小助手
             </h1>
 
@@ -418,13 +418,13 @@ export default function HomePage() {
                     className="flex items-center justify-between mb-2.5 cursor-pointer touch-manipulation active:scale-[0.99] transition-transform"
                     onClick={() => copyToClipboard(userInfo.email, '邮箱')}
                   >
-                    <span className="text-[15px] font-medium text-[#8E8E93] w-20 shrink-0 tracking-tight drop-shadow-[0_1px_2px_rgba(0,0,0,0.9)]">
+                    <span className="text-[15px] font-medium text-[#8E8E93] w-20 shrink-0 tracking-tight">
                       邮箱
                     </span>
 
                     <div className="flex items-center gap-3 min-w-0 flex-1 justify-end h-6 relative overflow-hidden">
                       <span
-                        className={`absolute right-0 text-[16px] font-bold truncate select-all tracking-tight drop-shadow-[0_1px_2px_rgba(0,0,0,0.9)] transition-all duration-300 ${
+                        className={`absolute right-0 text-[16px] font-bold truncate select-all tracking-tight transition-all duration-300 ${
                           copiedField === '邮箱' ? 'opacity-0 translate-y-4 scale-95' : 'opacity-100 translate-y-0 scale-100 text-[#1C1C1E]'
                         }`}
                       >
@@ -454,7 +454,7 @@ export default function HomePage() {
                       }`}
                     >
                       <Icon name="inbox" className="w-3.5 h-3.5" />
-                      <span className="tracking-tight drop-shadow-md">{inboxStatus === 'opening' ? '打开中' : '查看收件箱'}</span>
+                      <span className="tracking-tight">{inboxStatus === 'opening' ? '打开中' : '查看收件箱'}</span>
                     </button>
                   </div>
                 </div>
@@ -465,11 +465,11 @@ export default function HomePage() {
                 className="w-full py-3.5 btn-primary flex items-center justify-center gap-2"
               >
                 <Icon name="sparkles" className="w-5 h-5" />
-                <span className="text-[17px] font-semibold tracking-tight drop-shadow-md">生成新身份</span>
+                <span className="text-[17px] font-semibold tracking-tight">生成新身份</span>
               </button>
 
               <section>
-                <h2 className="text-[13px] font-semibold text-[#8E8E93] uppercase px-4 mb-2 tracking-wide drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]">
+                <h2 className="text-[13px] font-semibold text-[#8E8E93] uppercase px-4 mb-2 tracking-wide">
                   生成设置
                 </h2>
                 <div className="glass-card rounded-[16px] overflow-hidden">
@@ -513,9 +513,9 @@ export default function HomePage() {
                   className="inline-flex items-center gap-1.5 text-[14px] text-[#007AFF] font-semibold py-2 px-4 rounded-full bg-[#007AFF]/10 active:scale-95 transition-all touch-manipulation"
                 >
                   <Icon name="link" className="w-4 h-4" />
-                  <span className="tracking-tight drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]">加入 Telegram 频道</span>
+                  <span className="tracking-tight">加入 Telegram 频道</span>
                 </a>
-                <p className="text-[12px] text-[#8E8E93] font-medium tracking-tight drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]">
+                <p className="text-[12px] text-[#8E8E93] font-medium tracking-tight">
                   支持 {countries.length} 个国家 · {allDomains.length} 个域名
                 </p>
               </footer>
@@ -543,7 +543,7 @@ export default function HomePage() {
         rightAction={
           <button
             onClick={() => setShowDomainSheet(false)}
-            className="text-[#007AFF] font-semibold text-[16px] p-2 -mr-2 touch-manipulation active:scale-95 transition-transform tracking-tight drop-shadow-md"
+            className="text-[#007AFF] font-semibold text-[16px] p-2 -mr-2 touch-manipulation active:scale-95 transition-transform tracking-tight"
           >
             完成
           </button>
